@@ -11,4 +11,5 @@ fun main(){
     toPosition = "D3"
 
         println("ход: $fromPosition - $toPosition, номер хода: ${++moveCount}")
+
 }
