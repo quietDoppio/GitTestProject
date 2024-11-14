@@ -1,9 +1,14 @@
 package lesson2_arithmetic
 
 fun main(){
-    val permEmployeesSalaryCosts = 50*30000
-    val allEmployeesSalaryCosts = permEmployeesSalaryCosts + (30*20000)
-    val averageSalaryWithInterns = allEmployeesSalaryCosts/(50+30)
+    val permanentEmployees = 50
+    val interns = 30
+    val permEmployeesSalary = 30000
+    val internsSalary = 20000
+
+    val permEmployeesSalaryCosts = permanentEmployees * permEmployeesSalary
+    val allEmployeesSalaryCosts = permEmployeesSalaryCosts + (interns * internsSalary)
+    val averageSalaryWithInterns = allEmployeesSalaryCosts / (permanentEmployees + interns)
 
     println(permEmployeesSalaryCosts)
     println(allEmployeesSalaryCosts)
