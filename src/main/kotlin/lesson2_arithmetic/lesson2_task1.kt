@@ -1,5 +1,10 @@
 package lesson2_arithmetic
-fun main(){
-    val averageScore = ((3+4+3+5)/4.0)
+
+fun main() {
+    val countOfStudents = 4
+    val sumOfScores = (3 + 4 + 3 + 5).toFloat()
+
+    val averageScore = (sumOfScores / countOfStudents)
+
     println(averageScore)
 }
