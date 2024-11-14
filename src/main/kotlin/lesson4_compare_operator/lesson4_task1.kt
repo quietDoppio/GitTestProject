@@ -1,4 +1,4 @@
-package lesson3_compare_operator
+package lesson4_compare_operator
 
 const val RESTAURANT_TABLES = 13
 
