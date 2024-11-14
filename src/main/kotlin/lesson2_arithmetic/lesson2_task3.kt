@@ -1,11 +1,20 @@
 package lesson2_arithmetic
 
-fun main(){
-    val departureTimeSeconds  = (9*3600) + (39 * 60)
-    val travelTimeSeconds = 457 * 60
+const val SECONDS_IN_HOUR = 3600
+const val SECONDS_IN_MINUTE = 60
+const val HOURS_IN_DAY = 24
 
-    val arrivalTimeHour = (departureTimeSeconds + travelTimeSeconds)/3600
-    val arrivalTimeMinutes = ((departureTimeSeconds + travelTimeSeconds)%3600)/60
+fun main() {
+    val departureTimeHours = 9
+    val departureTimeMinutes = 39
+    val travelTimeMinutes = 457
 
-        println("$arrivalTimeHour:$arrivalTimeMinutes")
+    val departureTimeSeconds = (departureTimeHours * SECONDS_IN_HOUR) + (departureTimeMinutes * SECONDS_IN_MINUTE)
+    val travelTimeSeconds = travelTimeMinutes * SECONDS_IN_MINUTE
+    val totalTimeSeconds = departureTimeSeconds + travelTimeSeconds
+
+    val arrivalTimeHour = (totalTimeSeconds / SECONDS_IN_HOUR) % HOURS_IN_DAY
+    val arrivalTimeMinutes = (totalTimeSeconds % SECONDS_IN_HOUR) / SECONDS_IN_MINUTE
+
+    println("$arrivalTimeHour:$arrivalTimeMinutes")
 }
