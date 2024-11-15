@@ -2,7 +2,8 @@ package lesson3_strings
 
 fun main(){
     val figureToMultiplication = 5
-    val multiplicationTable = """
+
+    println("""
         $figureToMultiplication x 1 = ${figureToMultiplication * 1}
         $figureToMultiplication x 2 = ${figureToMultiplication * 2}
         $figureToMultiplication x 3 = ${figureToMultiplication * 3}
@@ -12,6 +13,5 @@ fun main(){
         $figureToMultiplication x 7 = ${figureToMultiplication * 7}
         $figureToMultiplication x 8 = ${figureToMultiplication * 8}
         $figureToMultiplication x 9 = ${figureToMultiplication * 9}
-    """.trimIndent()
-    println(multiplicationTable)
+    """.trimIndent())
 }
