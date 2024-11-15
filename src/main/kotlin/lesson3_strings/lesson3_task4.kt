@@ -5,11 +5,10 @@ fun main(){
     var fromPosition = "E2"
     var toPosition = "E4"
 
-        println("ход: $fromPosition - $toPosition, номер хода: $moveCount")
+        println("Ход чёрных\nход: $fromPosition - $toPosition, номер хода: $moveCount")
 
     fromPosition = "D2"
     toPosition = "D3"
 
-        println("ход: $fromPosition - $toPosition, номер хода: ${++moveCount}")
-
+        println("Ход белых\nход: $fromPosition - $toPosition, номер хода: ${++moveCount}")
 }
