@@ -5,13 +5,11 @@ const val PERCENT_SCALE = 100.0
 fun main(){
     val crystalOreCount = 7
     val metalOreCount = 11
-    val buffPercent = 20 / PERCENT_SCALE
+    val buffPercent = 20
 
-    val crystalOreBuffedResources = (buffPercent * crystalOreCount).toInt()
-    val metalOreBuffedResources = (buffPercent * metalOreCount).toInt()
+    val crystalOreBuffedResources = ((buffPercent / PERCENT_SCALE) * crystalOreCount).toInt()
+    val metalOreBuffedResources = ((buffPercent / PERCENT_SCALE)  * metalOreCount).toInt()
 
-    println("""
-        Бонусная кристаллическая руда - $crystalOreBuffedResources
-        Бонусная железная руда - $metalOreBuffedResources
-    """.trimIndent())
+    println("Бонусная кристаллическая руда - $crystalOreBuffedResources")
+    println("Бонусная железная руда - $metalOreBuffedResources")
 }
