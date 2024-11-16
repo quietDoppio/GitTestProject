@@ -1,27 +1,22 @@
 package lesson5_if_Else
 
 fun main() {
-    val firstDigitToWin = 12
-    val secondDigitToWin = 7
+    val firstDigitToWin = 17
+    val secondDigitToWin = 34
+    val finalText = "Верные ответы - $firstDigitToWin, $secondDigitToWin"
 
-    print("Введите первое число: ")
+    val firstGuess: Boolean
+    val secondGuess: Boolean
+
+    print("Введите первое число от 0 до 42: ")
     var theGuess = readln().toInt()
+    firstGuess = theGuess == firstDigitToWin || theGuess == secondDigitToWin
 
-    if (theGuess == firstDigitToWin) {
-        print("Ого! Вы угадали, это - $theGuess!\nТеперь введите второе число: ")
-        theGuess = readln().toInt()
-        if (theGuess == secondDigitToWin) {
-            println("Верно! Это - $theGuess!\nВы выиграли мууультиваааррррку!")
-        } else {
-            println("Вы пытались.. Вот ваш хот-дог\nПрвильные ответы: $firstDigitToWin, $secondDigitToWin")
-        }
-    } else {
-        print("К сожалению верный ответ это - $firstDigitToWin.\nЕсли угадаете со второй цифрой то получите приз: ")
-        theGuess = readln().toInt()
-        if (theGuess == secondDigitToWin) {
-            println("Верно! Это - $theGuess! Вот ваш хот-дог")
-        } else {
-            println("Может в другой раз..\nПрвильные ответы: $firstDigitToWin, $secondDigitToWin")
-        }
-    }
+    print("Введите второе число от 0 до 42: ")
+    theGuess = readln().toInt()
+    secondGuess = theGuess == secondDigitToWin || theGuess == firstDigitToWin
+
+    if (firstGuess && secondGuess) println("Поздравляем! Вы выиграли главный приз!\n$finalText")
+    else if (firstGuess && !secondGuess || !firstGuess && secondGuess) println("Вы выиграли утешительный приз!\n$finalText")
+    else println("Неудача\n$finalText")
 }
