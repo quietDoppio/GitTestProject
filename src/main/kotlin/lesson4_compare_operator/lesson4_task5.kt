@@ -15,11 +15,10 @@ fun main() {
     val isWeatherGood = readlnOrNull()?.toBoolean() ?: false
 
     val isReadyToDepart =
-        (!isDamaged && crewCount in MIN_CREW_COUNT..MAX_CREW_COUNT
-                && provisionsCount > MIN_PROVISIONS_COUNT) ||
-                (crewCount == MAX_CREW_COUNT && isWeatherGood
-                        && provisionsCount >= MIN_PROVISIONS_COUNT)
+        (!isDamaged && crewCount in MIN_CREW_COUNT..MAX_CREW_COUNT &&
+                provisionsCount > MIN_PROVISIONS_COUNT) ||
+                (crewCount == MAX_CREW_COUNT && isWeatherGood &&
+                        provisionsCount >= MIN_PROVISIONS_COUNT)
 
-    println("Корабль может отправлятсья".takeIf { isReadyToDepart }
-        ?: "Кораблю лучше оставаться в бухте")
+    println("Корабль может отправлятсья".takeIf { isReadyToDepart } ?: "Кораблю лучше оставаться в бухте")
 }
