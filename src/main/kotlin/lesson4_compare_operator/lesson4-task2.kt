@@ -13,19 +13,25 @@ fun main() {
     val informTextTemplate =
         "Груз весом %d кг и объемом %d соответствует категории \'Average\': %b"
 
-    println(String.format(
-        informTextTemplate,
-        firstCargoWeight,
-        firstCargoVolume,
-            firstCargoWeight > AVERAGE_MIN_WEIGHT
-              && firstCargoWeight <= AVERAGE_MAX_WEIGHT
-              && firstCargoVolume < AVERAGE_MAX_VOLUME))
+    println(
+        String.format(
+            informTextTemplate,
+            firstCargoWeight,
+            firstCargoVolume,
+            firstCargoWeight > AVERAGE_MIN_WEIGHT &&
+                    firstCargoWeight <= AVERAGE_MAX_WEIGHT &&
+                    firstCargoVolume < AVERAGE_MAX_VOLUME
+        )
+    )
 
-    println(String.format(
-        informTextTemplate,
-        secondCargoWeight,
-        secondCargoVolume,
-        secondCargoWeight > AVERAGE_MIN_WEIGHT
-                && secondCargoWeight <= AVERAGE_MAX_WEIGHT
-                && secondCargoVolume < AVERAGE_MAX_VOLUME))
+    println(
+        String.format(
+            informTextTemplate,
+            secondCargoWeight,
+            secondCargoVolume,
+            secondCargoWeight > AVERAGE_MIN_WEIGHT &&
+                    secondCargoWeight <= AVERAGE_MAX_WEIGHT &&
+                    secondCargoVolume < AVERAGE_MAX_VOLUME
+        )
+    )
 }
