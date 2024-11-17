@@ -1,14 +1,17 @@
 package lesson3_strings
 
-fun main(){
-    var moveCount = 1
+fun main() {
     var fromPosition = "E2"
     var toPosition = "E4"
+    var moveCount = 1
 
-        println("Ход чёрных\nход: $fromPosition - $toPosition, номер хода: $moveCount")
+    var movementInfo = "$fromPosition-$toPosition;$moveCount"
+    println(movementInfo)
 
     fromPosition = "D2"
     toPosition = "D3"
+    moveCount++
 
-        println("Ход белых\nход: $fromPosition - $toPosition, номер хода: ${++moveCount}")
+    movementInfo = "$fromPosition-$toPosition;$moveCount"
+    println(movementInfo)
 }
