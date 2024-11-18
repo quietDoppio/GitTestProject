@@ -1,16 +1,16 @@
 package lesson5_if_Else
 
 fun main() {
-    val user9221Name = "Zaphod"
-    val user9221Password = "PanGalactic"
+    val userProfileName = "Zaphod"
+    val userProfilePassword = "PanGalactic"
 
     print("Введите логин: ")
     val userName = readln()
 
-    if (userName == user9221Name) {
+    if (userName == userProfileName) {
         print("Введите пароль: ")
         val userPassword = readln()
-        if (userPassword == user9221Password) {
+        if (userPassword == userProfilePassword) {
             println("Добро пожаловать на борт")
         } else {
             println("Неверный пароль")
