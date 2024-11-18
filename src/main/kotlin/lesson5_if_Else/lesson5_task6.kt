@@ -16,11 +16,12 @@ fun main() {
     val bmi = weight / (heightMeters * heightMeters)
 
     val weightCategory: String = when {
-        (bmi < BMI_MIN) -> "Недостаточная масса тела"
-        (BMI_MIN <= bmi && bmi < BMI_NORMAL) -> "Нормальная масса тела"
-        (BMI_NORMAL <= bmi && bmi < BMI_OVERAGE) -> "Избыточная масса тела"
-        (bmi >= BMI_OVERAGE) -> "Ожирение"
+        (bmi < BMI_MIN) -> "недостаточная масса тела"
+        (BMI_MIN <= bmi && bmi < BMI_NORMAL) -> "нормальная масса тела"
+        (BMI_NORMAL <= bmi && bmi < BMI_OVERAGE) -> "избыточная масса тела"
+        (bmi >= BMI_OVERAGE) -> "ожирение"
         else -> ""
     }
+    println("У вас $weightCategory\n")
     println("Ваш ИМТ - ${"%.2f".format(bmi)}\nВаша категория веса - $weightCategory")
 }
