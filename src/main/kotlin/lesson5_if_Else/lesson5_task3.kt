@@ -5,18 +5,19 @@ fun main() {
     val secondDigitToWin = 34
     val finalText = "Верные ответы - $firstDigitToWin, $secondDigitToWin"
 
-    val firstGuess: Boolean
-    val secondGuess: Boolean
+    val isFirstAnswerGuessed: Boolean
+    val isSecondAnswerGuessed: Boolean
 
     print("Введите первое число от 0 до 42: ")
     var theGuess = readln().toInt()
-    firstGuess = theGuess == firstDigitToWin || theGuess == secondDigitToWin
+    isFirstAnswerGuessed = theGuess == firstDigitToWin || theGuess == secondDigitToWin
 
     print("Введите второе число от 0 до 42: ")
     theGuess = readln().toInt()
-    secondGuess = theGuess == secondDigitToWin || theGuess == firstDigitToWin
+    isSecondAnswerGuessed = theGuess == secondDigitToWin || theGuess == firstDigitToWin
 
-    if (firstGuess && secondGuess) println("Поздравляем! Вы выиграли главный приз!\n$finalText")
-    else if (firstGuess && !secondGuess || !firstGuess && secondGuess) println("Вы выиграли утешительный приз!\n$finalText")
+    if (isFirstAnswerGuessed && isSecondAnswerGuessed) println("Поздравляем! Вы выиграли главный приз!\n$finalText")
+    else if (isFirstAnswerGuessed && !isSecondAnswerGuessed || !isFirstAnswerGuessed && isSecondAnswerGuessed)
+        println("Вы выиграли утешительный приз!\n$finalText")
     else println("Неудача\n$finalText")
 }
