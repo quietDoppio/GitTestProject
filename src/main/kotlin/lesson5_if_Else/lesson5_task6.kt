@@ -19,8 +19,7 @@ fun main() {
         (bmi < BMI_MIN) -> "недостаточная масса тела"
         (BMI_MIN <= bmi && bmi < BMI_NORMAL) -> "нормальная масса тела"
         (BMI_NORMAL <= bmi && bmi < BMI_OVERAGE) -> "избыточная масса тела"
-        (bmi >= BMI_OVERAGE) -> "ожирение"
-        else -> ""
+        else -> "ожирение"
     }
     println("У вас $weightCategory\n")
     println("Ваш ИМТ - ${"%.2f".format(bmi)}\nВаша категория веса - $weightCategory")
