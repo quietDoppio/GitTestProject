@@ -4,11 +4,10 @@ const val MILLS_IN_SECONDS: Long = 1000
 fun main() {
 
     print("Введите кол-во секунд для отсчёта: ")
-    val seconds = readln().toLong()
-    var counter = 0
+    var seconds = readln().toInt()
 
-    while (counter <= seconds) {
-        println("Осталось секунд: ${seconds - counter++}")
+    while (seconds != 0) {
+        println("Осталось секунд: ${seconds--}")
         Thread.sleep(MILLS_IN_SECONDS)
     }
     println("Время вышло")
