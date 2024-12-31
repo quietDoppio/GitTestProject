@@ -1,21 +1,24 @@
 package lesson7_for_range
 
 fun main() {
-    val listOfRanges = listOf('a'..'z', 'A'..'Z', 0..9)
+    val charRange = 'a'..'z'
+    val upperCharRange = 'A'..'Z'
+    val numsRange = '0'..'9'
+    val passwordChars = charRange + upperCharRange + numsRange
     var userPasswordRange: IntRange
-    var generatedPassword = ""
+
+    val password = mutableListOf<Char>()
+    password.add(charRange.random())
+    password.add(upperCharRange.random())
+    password.add(numsRange.random())
 
     do {
         print("Введите количество символов для вашего пароля не менее чем 6: ")
-        userPasswordRange = 1..readln().toInt()
+        userPasswordRange = (password.size + 1)..readln().toInt()
     } while (userPasswordRange.last < 6)
 
     for (i in userPasswordRange) {
-        val index = listOfRanges.indices.random()
-        generatedPassword += listOfRanges[index].toSet().random()
-
+        password.add(passwordChars.random())
     }
-    println(generatedPassword)
-
-
+    println(password.shuffled().joinToString(""))
 }
