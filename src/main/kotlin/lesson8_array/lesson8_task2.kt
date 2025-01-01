@@ -12,5 +12,5 @@ fun main() {
             break
         }
     }
-    println(result)
+     println(result)
 }
