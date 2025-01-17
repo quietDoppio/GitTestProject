@@ -5,14 +5,12 @@ fun main() {
 
     print("Сколько вы хотите порций? ")
     val numberOfPortions = readln().toInt()
+    val updatedIngredients = omeletteIngredients.map { it * numberOfPortions }
 
-    for (i in omeletteIngredients.indices) {
-        omeletteIngredients[i] = omeletteIngredients[i] * numberOfPortions
-    }
     println(
         "На $numberOfPortions вам понадобится: " +
-                "Яиц - ${omeletteIngredients[0]}, " +
-                "Молока - ${omeletteIngredients[1]} мл, " +
-                "Сливочного масла - ${omeletteIngredients[2]} гр."
+                "Яиц - ${updatedIngredients[0]}, " +
+                "Молока - ${updatedIngredients[1]} мл, " +
+                "Сливочного масла - ${updatedIngredients[2]} гр."
     )
 }
