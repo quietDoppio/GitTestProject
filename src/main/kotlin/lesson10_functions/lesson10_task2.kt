@@ -9,6 +9,7 @@ fun main() {
 
     val result = "Добро пожаловать".takeIf { measureTheLine(userLogin, userPassword) }
         ?: "Логин или пароль недостаточно длинные"
+
     println(result)
 }
 
@@ -17,5 +18,4 @@ fun measureTheLine(login: String, password: String): Boolean {
         (login.length < MIN_LINE_LENGTH || password.length < MIN_LINE_LENGTH) -> false
         else -> true
     }
-
 }
