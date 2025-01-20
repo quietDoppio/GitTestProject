@@ -11,8 +11,9 @@ fun main() {
     val userPassword = readln()
 
     val token = authenticate(userName, userPassword)
-    val listOfGoods = getShoppingCart(token)
-    println(listOfGoods)
+    val result = "Неправильный логин или пароль, в доступе отказано".takeIf { token.isNullOrEmpty() }
+        ?: getShoppingCart(token!!)
+    println(result)
 }
 
 fun authenticate(userName: String, userPassword: String): String? {
@@ -27,10 +28,6 @@ fun generateToken(): String {
         .joinToString("")
 }
 
-fun getShoppingCart(token: String?): List<String>? {
-    if (token == null) {
-        println("Неправильный логин или пароль. В доступе отказано.")
-        return null
-    }
-    return listOf("Шоколадка", "Тапочки", "Кружка")
+fun getShoppingCart(token: String): String {
+    return listOf("Шоколадка", "Тапочки", "Кружка").joinToString(", ")
 }
