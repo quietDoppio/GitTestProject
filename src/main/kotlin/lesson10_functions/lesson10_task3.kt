@@ -8,12 +8,11 @@ fun main() {
 
 fun generatePassword(passwordRange: Int): String {
     val newPassword = StringBuilder()
-    val charsRange = listOf('!', '"', '#', '$', '%', '&', '\'', '(', ')', '*', '+', ',', '-', '.', '/', ' ')
+    val charsRange = ' '..'/'
     val digitsRange = '0'..'9'
 
     repeat(passwordRange) {
         newPassword.append(if (it % 2 == 0) digitsRange.random() else charsRange.random())
     }
-
     return newPassword.toString()
 }
