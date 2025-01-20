@@ -12,7 +12,7 @@ fun main() {
 
     val token = authenticate(userName, userPassword)
     val result = "Неправильный логин или пароль, в доступе отказано".takeIf { token.isNullOrEmpty() }
-        ?: getShoppingCart(token!!)
+        ?: getShoppingCart(token ?: "Непредвиденная ошибка.")
     println(result)
 }
 
