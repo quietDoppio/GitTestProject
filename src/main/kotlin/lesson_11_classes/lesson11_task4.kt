@@ -1,14 +1,12 @@
 package lesson_11_classes
 
 class RecipesCategory(
-    val name: String,
-    val description: String,
-    val icon: String,
+    val recipes: MutableList<Recipe> = mutableListOf()
 )
 
 class Recipe(
     val name: String,
-    val ingredients: MutableList<String> = mutableListOf(),
+    val ingredients: MutableList<Ingredient> = mutableListOf(),
     val cookingDescription: String,
     var portions: Int,
 )
