@@ -1,10 +1,10 @@
 package lesson12_constructors
 
 fun main() {
-    val weatherStatusBar = WeatherStatusBar(290, 275, false)
+    val weatherStatusBar0 = WeatherStatusBar0(290, 275, false)
 }
 
-class WeatherStatusBar(
+class WeatherStatusBar0(
     _dayTemperature: Int,
     _nighTemperature: Int,
     _isPrecipitation: Boolean,
