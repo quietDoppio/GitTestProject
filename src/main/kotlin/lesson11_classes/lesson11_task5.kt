@@ -1,4 +1,4 @@
-package lesson_11_classes
+package lesson11_classes
 
 fun main() {
     val forum = Forum()
