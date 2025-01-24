@@ -1,14 +1,38 @@
 package lesson13_null_safety
 
 fun main() {
-    val phoneContactBook = mutableSetOf<VPhoneContact?>()
-    phoneContactBook.add(getContact())
-    phoneContactBook.add(getContact())
-    phoneContactBook.add(getContact())
+    val phoneContactBook = getContacts()
 
     for (i in phoneContactBook) {
-        i?.printInfo()
+        i.printInfo()
     }
+}
+
+fun getContacts(): List<VPhoneContact> {
+    val contactBook = mutableListOf<VPhoneContact>()
+    do {
+        var isNext = true
+        print("Имя: ")
+        val name = readln()
+
+        print("Номер: ")
+        val number = readln().toLongOrNull()
+        if (number == null) {
+            println("Телефонный номер не введён или введён некоректно. Контакт не будет создан.")
+            continue
+        }
+
+        print("Компания: ")
+        var company: String? = readln()
+        if (company == "") company = null
+
+        contactBook.add(VPhoneContact(name, number, company))
+        print("Добавить ещё? ")
+        if (readln().lowercase() != "да") isNext = false
+
+    } while (isNext)
+
+    return contactBook
 }
 
 class VPhoneContact(
@@ -19,22 +43,4 @@ class VPhoneContact(
     fun printInfo() {
         println("Имя: $name, Номер: $phoneNumber, Компания: ${company ?: "Не указано"}")
     }
-}
-
-fun getContact(): VPhoneContact? {
-    print("Имя: ")
-    val name = readln()
-
-    print("Номер: ")
-    val number = readln().toLongOrNull()
-    if (number == null) {
-        println("Телефонный номер не введён. Контакт не будет создан.")
-        return null
-    }
-
-    print("Компания: ")
-    var company: String? = readln()
-    if (company == "") company = null
-
-    return VPhoneContact(name, number, company)
 }
