@@ -24,10 +24,10 @@ fun getContacts(): List<VPhoneContact> {
 
         print("Компания: ")
         var company: String? = readln()
-        if (company == "") company = null
+        if (company.isNullOrBlank()) company = null
 
         contactBook.add(VPhoneContact(name, number, company))
-        print("Добавить ещё? ")
+        print("Добавить ещё? Да/Нет: ")
         if (readln().lowercase() != "да") isNext = false
 
     } while (isNext)
