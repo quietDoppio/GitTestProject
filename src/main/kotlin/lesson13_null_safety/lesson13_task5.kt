@@ -20,9 +20,7 @@ fun getContact(): ContactPhoneDirectory? {
         return filledContact
 
     } catch (exc: NumberFormatException) {
-        println(
-            "Что-то пошло не так...\n$exc"
-        )
+        println("${exc::class.simpleName}.")
     }
 
     return null
