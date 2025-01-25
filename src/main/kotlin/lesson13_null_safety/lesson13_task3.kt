@@ -6,10 +6,12 @@ fun main() {
         PhoneNoteContact("Константин", 89214015523, null),
         PhoneNoteContact("Виктор", 89950558911, null),
         PhoneNoteContact("Анна", 89051319080, "гуголь"),
-        PhoneNoteContact("Анастасия", 5559284, "вкантакте"),
+        PhoneNoteContact("Анастасия", 5559284, "гуголь"),
     )
-    for (i in contactList) {
-        i.printInfo()
+    val filteredContactList = contactList.mapNotNull { it.company }.distinct()
+
+    for (i in filteredContactList) {
+        println(i)
     }
 }
 
