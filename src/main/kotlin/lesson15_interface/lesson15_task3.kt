@@ -31,4 +31,5 @@ class Administrator(id: Int, name: String) : ChatUser(id, name) {
     fun banUser(userId: Int) {
         println("Пользователь c id: $userId был забанен администратором.")
     }
+
 }
