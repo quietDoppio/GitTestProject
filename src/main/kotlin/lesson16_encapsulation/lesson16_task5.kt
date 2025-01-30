@@ -18,13 +18,13 @@ class Player(
 
     fun hitPlayer() {
         val damageLvl = (5..50).random()
-        if ((health - damageLvl) < 0) _health = 0
+        if ((health - damageLvl) <= 0) _health = 1
         else _health -= damageLvl
         println(
             "$name получил урон в размере - $damageLvl\n" +
                     "Текущее здоровье - $health\n"
         )
-        if (health == 0) killPlayer()
+        if (health == 1) killPlayer()
     }
 
     fun healPlayer() {
