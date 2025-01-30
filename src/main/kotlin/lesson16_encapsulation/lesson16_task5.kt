@@ -3,10 +3,11 @@ package lesson16_encapsulation
 const val MAX_HP = 100
 fun main() {
     val ashenOne = Player("Негорящий")
-    while (ashenOne.health > 0) {
-        ashenOne.hitPlayer()
-        ashenOne.healPlayer()
-    }
+
+    ashenOne.hitPlayer(50)
+    ashenOne.healPlayer()
+    ashenOne.hitPlayer(50)
+    ashenOne.hitPlayer(50)
 }
 
 class Player(
@@ -14,27 +15,30 @@ class Player(
     private var _health: Int = 100,
     private var impactForce: Int = 25,
 ) {
-    val health get() = _health
+    private var isDead: Boolean = false
 
-    fun hitPlayer() {
-        val damageLvl = (5..50).random()
-        if ((health - damageLvl) <= 0) _health = 1
-        else _health -= damageLvl
+    fun hitPlayer(damageLvl: Int) {
+        if ((_health - damageLvl) <= 0) {
+            _health = 0
+            isDead = true
+        } else {
+            _health -= damageLvl
+        }
         println(
             "$name получил урон в размере - $damageLvl\n" +
-                    "Текущее здоровье - $health\n"
+                    "Текущее здоровье - ${(_health).coerceAtLeast(0)}\n"
         )
-        if (health == 1) killPlayer()
+        if (isDead) killPlayer()
     }
 
     fun healPlayer() {
-        if (health != 0) {
+        if (!isDead) {
             val healLvl = (1..25).random()
-            if ((health + healLvl) > MAX_HP) _health = MAX_HP
+            if ((_health + healLvl) > MAX_HP) _health = MAX_HP
             else _health += healLvl
             println(
                 "$name изличился на - $healLvl\n" +
-                        "Текущее здоровье - $health\n"
+                        "Текущее здоровье - $_health\n"
             )
         }
     }
