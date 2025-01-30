@@ -1,15 +1,23 @@
 package lesson17_getter_setter
 
-class Quiz(
-    private val _question: String = "Когда новый год??",
-    private var _reply: String = "",
-) {
-    val question
-        get() = _question
+fun main() {
+    val quiz = Quiz()
+    println(quiz.question)
+    println(quiz.reply)
 
-    var reply: String
-        get() = _reply
+    quiz.reply = "Завтра"
+    println(quiz.reply)
+}
+
+class Quiz(
+
+) {
+    val question: String = "Когда новый год??"
+        get() = field
+
+    var reply: String = "..."
+        get() = field
         set(value) {
-            _reply = value
+            field = value
         }
 }
