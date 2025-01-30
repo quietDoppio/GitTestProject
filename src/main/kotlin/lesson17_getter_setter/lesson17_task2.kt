@@ -7,13 +7,10 @@ fun main() {
 }
 
 class Ship(
-    private val _name: String,
+    _name: String,
     val speed: Int,
     val port: String,
 ) {
-    var name: String
-        get() = _name
-        set(value) {
-            println("Данное свойство не подлежит изменениям.")
-        }
+    var name: String = _name
+        set(value) = println("Данное свойство не подлежит изменениям.")
 }
