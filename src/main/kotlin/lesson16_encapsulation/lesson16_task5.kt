@@ -26,7 +26,7 @@ class Player(
         }
         println(
             "$name получил урон в размере - $damageLvl\n" +
-                    "Текущее здоровье - ${(_health).coerceAtLeast(0)}\n"
+                    "Текущее здоровье - $_health\n"
         )
         if (isDead) killPlayer()
     }
