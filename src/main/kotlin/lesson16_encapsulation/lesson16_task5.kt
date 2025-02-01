@@ -19,16 +19,15 @@ class Player(
 
     fun hitPlayer(damageLvl: Int) {
         if ((_health - damageLvl) <= 0) {
-            _health = 0
-            isDead = true
+            println("Получен фатальный урон в размере - $damageLvl.")
+            killPlayer()
         } else {
             _health -= damageLvl
+            println(
+                "$name получил урон в размере - $damageLvl\n" +
+                        "Текущее здоровье - $_health\n"
+            )
         }
-        println(
-            "$name получил урон в размере - $damageLvl\n" +
-                    "Текущее здоровье - $_health\n"
-        )
-        if (isDead) killPlayer()
     }
 
     fun healPlayer() {
@@ -46,6 +45,7 @@ class Player(
     private fun killPlayer() {
         _health = 0
         impactForce = 0
+        isDead = true
         println("$name погиб.")
     }
 }
