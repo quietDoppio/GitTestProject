@@ -5,21 +5,24 @@ fun main() {
     mainScreenViewModel.loadData()
 }
 
-data class MainScreenState(
-    val data: String? = null,
-    val isLoading: Boolean = false,
-) {}
+class MainScreenViewModel() {
 
-class MainScreenViewModel(
-    var mainScreenState: MainScreenState = MainScreenState()
-) {
+    data class MainScreenState(
+        val data: String? = null,
+        val isLoading: Boolean = false,
+    )
+
+    private var _mainScreenState = MainScreenState()
+    val mainScreenState get() = _mainScreenState
+
     fun loadData() {
         if (mainScreenState.data.isNullOrEmpty()) {
             println("Данные отсутствуют")
-            mainScreenState = mainScreenState.copy(isLoading = true)
-            println("Загрузка данных")
-            mainScreenState = mainScreenState.copy("данные", isLoading = false)
+            _mainScreenState = mainScreenState.copy(isLoading = true)
+            println("Загрузка данных...")
+            _mainScreenState = mainScreenState.copy("данные", isLoading = false)
             println("Данные загружены.\n$mainScreenState")
         }
     }
+
 }
